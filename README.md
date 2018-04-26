@@ -1,17 +1,14 @@
-SpreeCampaigns
-==============
+Spree Campaigns
+===============
 
-Introduction goes here.
+Campaigns module.
 
 ## Installation
 
 1. Add this extension to your Gemfile with this line:
   ```ruby
-  gem 'spree_campaigns', github: '[your-github-handle]/spree_campaigns', branch: 'X-X-stable'
+  gem 'spree_campaigns', github: 'engarcia/spree_campaigns', branch: '3-0-stable'
   ```
-
-  The `branch` option is important: it must match the version of Spree you're using.
-  For example, use `3-1-stable` if you're using Spree `3-1-stable` or any `3.1.x` version.
 
 2. Install the gem using Bundler:
   ```ruby
@@ -43,11 +40,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_campaigns/factories'
 ```
 
-
-## Contributing
-
-If you'd like to contribute, please take a look at the
-[instructions](CONTRIBUTING.md) for installing dependencies and crafting a good
-pull request.
-
-Copyright (c) 2018 [name of extension creator], released under the New BSD License
+Copyright (c) 2017 EnriqueGC, released under the New BSD License
