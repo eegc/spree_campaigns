@@ -2,15 +2,14 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_campaigns'
-  s.version     = '3.0.10'
-  s.summary     = 'TODO: Add gem summary here'
-  s.description = 'TODO: Add (optional) gem description here'
+  s.version     = '1.0.0'
+  s.summary     = 'Campaigns funcionality'
   s.required_ruby_version = '>= 2.1.0'
 
-  # s.author    = 'You'
-  # s.email     = 'you@example.com'
-  # s.homepage  = 'http://www.spreecommerce.com'
-  s.license = 'BSD-3'
+  s.author   = 'Enrique Garcia'
+  s.email    = 'engarcia.cas@gmail.com'
+  s.homepage = 'https://github.com/engarcia'
+  s.license  = 'BSD-3'
 
   # s.files       = `git ls-files`.split("\n")
   # s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -28,5 +27,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'sass-rails', '~> 5.0.0'
   s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'sqlite3'
 end
