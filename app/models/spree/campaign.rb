@@ -3,4 +3,7 @@ class Spree::Campaign < Spree::Base
   validates_uniqueness_of :slug
 
   belongs_to :taxon
+
+  scope :active    , -> { where("(starts_at IS NULL OR starts_at < ?) AND (expires_at IS NULL OR expires_at > ?)", Time.now, Time.now) }
+  scope :available , -> { where(published: true).active }
 end
