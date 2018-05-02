@@ -1,0 +1,6 @@
+<!-- insert_bottom '#main-sidebar' -->
+<% if can? :admin, Spree::Campaign %>
+  <ul class="nav nav-sidebar">
+    <%= tab(plural_resource_name(Spree::Campaign), url: admin_campaigns_path, icon: "bullhorn") %>
+  </ul>
+<% end %>
