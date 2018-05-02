@@ -25,6 +25,13 @@
 
   <div class="row">
     <div class="col-md-6">
+      <%= f.field_container :taxon do %>
+        <%= f.label :taxon %>
+        <%= f.select :taxon_id, Spree::Taxon.roots.map{ |t| [t.name, t.id] }, { :include_blank => true }, { class: "fullwidth select2" } %>
+      <% end %>
+    </div>
+
+    <div class="col-md-6">
       <div class="checkbox" data-hook="campaign_published">
         <%= label_tag :published do %>
           <%= f.check_box :published %>
