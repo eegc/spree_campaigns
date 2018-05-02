@@ -1,0 +1,43 @@
+<div data-hook="admin_campaign_form_fields">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="name_field" class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, value: @object.name, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div id="starts_at_field" class="form-group">
+        <%= f.label :starts_at %>
+        <%= f.text_field :starts_at, :value => datepicker_field_value(@object.starts_at), :class => 'datepicker datepicker-from form-control' %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div id="expires_at_field" class="form-group">
+        <%= f.label :expires_at %>
+        <%= f.text_field :expires_at, :value => datepicker_field_value(@object.expires_at), :class => 'datepicker datepicker-to form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.field_container :taxon do %>
+        <%= f.label :taxon %>
+        <%= f.select :taxon_id, Spree::Taxon.roots.map{ |t| [t.name, t.id] }, { :include_blank => true }, { class: "fullwidth select2" } %>
+      <% end %>
+    </div>
+
+    <div class="col-md-6">
+      <div class="checkbox" data-hook="campaign_published">
+        <%= label_tag :published do %>
+          <%= f.check_box :published %>
+          <%= Spree.t(:published) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

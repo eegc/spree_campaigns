@@ -1,0 +1,17 @@
+es:
+  activerecord:
+    attributes:
+      spree/campaign:
+        name: Nombre
+        url: Ruta
+        published: Publicado
+        starts_at: Empieza
+        expires_at: Termina
+
+    models:
+      spree/campaign:
+        one: Campaña
+        other: Campañas
+  spree:
+    date_range: Rango de fechas
+    new_campaign: Nueva campaña
