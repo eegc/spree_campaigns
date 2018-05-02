@@ -1,0 +1,22 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:new_campaign) %>
+<% end %>
+
+<%= form_for [:admin, @object], html: { multipart: true } do |f| %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-default" data-hook="new_campaign" >
+        <div class="panel-body">
+          <div class="col-md-12">
+            <%= render partial: 'form', locals: { f: f } %>
+
+            <div class="form-actions" data-hook="buttons">
+              <%= button Spree.t('actions.save'), 'save' %>
+              <span class="or"><%= Spree.t(:or) %></span>
+              <%= button_link_to Spree.t('actions.cancel'), spree.admin_campaigns_path, icon: 'delete', id: 'cancel_link' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

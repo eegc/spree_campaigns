@@ -1,6 +1,7 @@
 class Spree::Campaign < Spree::Base
 
   validates_uniqueness_of :slug
+  validates_presence_of :name
 
   belongs_to :taxon
 
