@@ -29,6 +29,11 @@ module Spree
         params[:q][:expires_at_lt] = expires_at_lt
       end
 
+      protected
+
+      def find_resource
+        Spree::Campaign.available.friendly.find(params[:id])
+      end
     end
   end
 end
