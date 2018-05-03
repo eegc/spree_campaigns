@@ -1,7 +1,6 @@
 module Spree
   module Admin
     class CampaignsController < ResourceController
-
       def index
         params[:q] ||= {}
 
