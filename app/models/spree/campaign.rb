@@ -9,4 +9,5 @@ class Spree::Campaign < Spree::Base
 
   scope :active    , -> { where("(starts_at IS NULL OR starts_at < ?) AND (expires_at IS NULL OR expires_at > ?)", Time.now, Time.now) }
   scope :available , -> { where(published: true).active }
+  scope :with_taxon, -> { joins(:taxon) }
 end
