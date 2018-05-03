@@ -3,5 +3,5 @@ Spree::Core::Engine.routes.draw do
     resources :campaigns
   end
 
-  get '/campaign/:id', to: 'campaigns#show'
+  get '/campaigns/:id', to: 'campaigns#show', as: :campaign
 end
