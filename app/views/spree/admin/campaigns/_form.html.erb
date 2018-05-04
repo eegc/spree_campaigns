@@ -25,19 +25,24 @@
 
   <div class="row">
     <div class="col-md-6">
-      <%= f.field_container :taxon do %>
-        <%= f.label :taxon %>
-        <%= f.select :taxon_id, Spree::Taxon.roots.map{ |t| [t.name, t.id] }, { :include_blank => true }, { class: "fullwidth select2" } %>
-      <% end %>
-    </div>
-
-    <div class="col-md-6">
       <div class="checkbox" data-hook="campaign_published">
         <%= label_tag :published do %>
           <%= f.check_box :published %>
-          <%= Spree.t(:published) %>
+          <%= Spree::Campaign.human_attribute_name(:published) %>
         <% end %>
       </div>
     </div>
   </div>
+
+  <div class="row" data-hook="taxon_field">
+    <div class="col-md-12">
+      <%= f.label :taxon %>
+    </div>
+    <div class="col-md-6">
+      <%= f.field_container :taxon, class: ['form-group'] do %>
+        <%= f.select :taxon_id, Spree::Taxon.for_campaigns.map{ |t| [t.name, t.id] }, { :include_blank => true }, { class: "fullwidth select2" } %>
+      <% end %>
+    </div>
+  </div>
+
 </div>

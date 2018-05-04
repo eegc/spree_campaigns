@@ -6,10 +6,13 @@ module Spree
 
     def show
       @campaign = Spree::Campaign.available.friendly.find(params[:id])
-      if @campaign && @campaign.taxon
+
+      if @campaign.present? && @campaign.taxon.present?
         @taxon = @campaign.taxon
         @searcher = build_searcher(params.merge(taxon: @taxon.id, include_images: true))
         @products = @searcher.retrieve_products
+      else
+        render_404
       end
     end
   end
